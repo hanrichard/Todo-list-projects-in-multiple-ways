@@ -14,7 +14,7 @@
     "buildAll": "(yarn build);(yarn build:internal)",
     "test": "export TS_JEST_DISABLE_VER_CHECKER=true && jest --runInBand",
     "prepare": "cd .. && husky install",
-    "precommit": "lint-staged && npm version patch"
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "antd": "^5.7.3",
