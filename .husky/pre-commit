@@ -1,0 +1,18 @@
+
+#!/bin/sh
+set -e
+. "$(dirname "$0")/_/husky.sh"
+
+parent_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" || exit ; pwd -P )
+
+pushd "${parent_path}/.." || exit
+pwd
+ls
+
+pushd todo-react-typescript-vite
+if [ "$(git status . --porcelain | wc -l)" -eq "0" ]; then
+  echo "  🟢 todo-react-typescript-vite repo is clean."
+else
+  yarn precommit;
+fi
+popd
