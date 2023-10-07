@@ -14,7 +14,7 @@
     "buildAll": "(yarn build);(yarn build:internal)",
     "precommit": "lint-staged",
     "test": "export TS_JEST_DISABLE_VER_CHECKER=true && jest --runInBand",
-    "prepare": "husky install"
+    "prepare": "cd .. && husky install"
   },
   "dependencies": {
     "antd": "^5.7.3",
@@ -63,7 +63,7 @@
     "eslint-plugin-react-refresh": "^0.3.4",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "flush-promises": "^1.0.2",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "jest": "^27.0.5",
     "jest-enzyme": "^7.1.2",
     "jest-styled-components": "^7.0.5",
@@ -98,7 +98,9 @@
     "workerDirectory": "public"
   },
   "jest": {
-    "setupFilesAfterEnv": ["<rootDir>/src/setupTests.ts"],
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.ts"
+    ],
     "testEnvironment": "jsdom",
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
